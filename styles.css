@@ -1,0 +1,235 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #FAFAF8;          /* off-white — page background (matches app) */
+  --surface: #F2F2EE;     /* soft surface */
+  --sage: #93AE8F;        /* brand / buttons (matches app) */
+  --sage-dark: #7E9A7A;   /* hover */
+  --sage-pale: #EDF1EC;   /* pill background */
+  --ink: #1A1A18;         /* headings / primary text */
+  --ink-soft: #3B3B36;    /* body text */
+  --muted: #6E6E68;       /* secondary text */
+  --border: #D8D8D3;      /* subtle border */
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace; /* app font */
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===== Header (inner pages) ===== */
+.site-header {
+  padding: 1.25rem 0;
+}
+
+.back-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 0.7;
+}
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center;
+  padding: 5rem 0 3rem;
+}
+
+.hero h1 {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.hero .lines {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.hero .lines p {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.hero .lines p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Button stack ===== */
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 48px;
+  padding: 0 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.coming-soon {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--sage-pale);
+  border: 1.5px solid var(--border);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.link-card {
+  background: var(--sage);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(26, 26, 24, 0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.link-card:hover {
+  background: var(--sage-dark);
+  box-shadow: 0 6px 18px rgba(26, 26, 24, 0.14);
+  transform: translateY(-2px);
+}
+
+/* ===== Content Pages ===== */
+.page-content {
+  padding: 2rem 0 4rem;
+}
+
+.page-content h1 {
+  font-family: var(--mono);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.page-content .subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.page-content h2 {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.page-content p,
+.page-content ul,
+.page-content ol {
+  margin-bottom: 1rem;
+  color: var(--ink-soft);
+}
+
+.page-content ul,
+.page-content ol {
+  padding-left: 1.5rem;
+}
+
+.page-content li {
+  margin-bottom: 0.5rem;
+}
+
+.page-content strong {
+  color: var(--ink);
+}
+
+.page-content a {
+  color: var(--ink);
+  font-weight: 500;
+  border-bottom: 2px solid var(--sage);
+  transition: border-color 0.2s;
+}
+
+.page-content a:hover {
+  border-color: var(--sage-dark);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .hero {
+    padding: 3.5rem 0 2rem;
+  }
+  .hero h1 {
+    font-size: 1.85rem;
+  }
+  .hero .lines p {
+    font-size: 1.05rem;
+  }
+}

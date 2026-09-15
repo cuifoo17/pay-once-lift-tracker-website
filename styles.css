@@ -10,9 +10,9 @@
 :root {
   --bg: #FAFAF8;          /* off-white — page background (matches app) */
   --surface: #F2F2EE;     /* soft surface */
-  --sage: #93AE8F;        /* brand / buttons (matches app) */
-  --sage-dark: #7E9A7A;   /* hover */
-  --sage-pale: #EDF1EC;   /* pill background */
+  --accent: #FD8D3D;      /* brand / buttons (orange) */
+  --accent-dark: #E67A2B; /* hover */
+  --accent-pale: #FFEEDF; /* pill background */
   --ink: #1A1A18;         /* headings / primary text */
   --ink-soft: #3B3B36;    /* body text */
   --muted: #6E6E68;       /* secondary text */
@@ -132,14 +132,14 @@ main {
   font-family: var(--mono);
   font-weight: 600;
   color: var(--ink);
-  background: var(--sage-pale);
+  background: var(--accent-pale);
   border: 1.5px solid var(--border);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .link-card {
-  background: var(--sage);
+  background: var(--accent);
   color: #fff;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(26, 26, 24, 0.08);
@@ -147,7 +147,7 @@ main {
 }
 
 .link-card:hover {
-  background: var(--sage-dark);
+  background: var(--accent-dark);
   box-shadow: 0 6px 18px rgba(26, 26, 24, 0.14);
   transform: translateY(-2px);
 }
@@ -205,12 +205,12 @@ main {
 .page-content a {
   color: var(--ink);
   font-weight: 500;
-  border-bottom: 2px solid var(--sage);
+  border-bottom: 2px solid var(--accent);
   transition: border-color 0.2s;
 }
 
 .page-content a:hover {
-  border-color: var(--sage-dark);
+  border-color: var(--accent-dark);
 }
 
 /* ===== Footer ===== */
